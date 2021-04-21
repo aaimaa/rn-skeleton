@@ -7,6 +7,14 @@
     "web": "expo start --web",
     "eject": "expo eject"
   },
+  "rnpm": {
+    "ios": {},
+    "android": {},
+    "assets": [
+      "./path-to-assets"
+    ],
+    "plugin": "./path-to-commands.js"
+  },
   "dependencies": {
     "@react-native-community/masked-view": "0.1.10",
     "@react-navigation/drawer": "^5.12.5",
