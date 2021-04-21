@@ -25,7 +25,9 @@ const AboutUs = () => {
                 lot and planning to do more in future.
             </Text>
             </View>
-            <Rating/>
+            <View style={{marginTop:100}}>
+            <Rating type="star" showRating={true} fractions={2}/>
+            </View>
         </View>
     )
 }
