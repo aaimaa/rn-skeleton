@@ -3,13 +3,15 @@ import { Pressable, StyleSheet, Text, View } from 'react-native'
 import { AntDesign } from '@expo/vector-icons';
 
 import SnackBar from 'react-native-snackbar-component'
-
+import Form from '../Components/Form'
 
 const ContactUs = () => {
     
     const[visible,setVisible]=useState(false);
 const [url,setUrl]=useState('');
     return (
+        
+       <>
         <View style={styles.container}>
             <SnackBar visible={visible} textMessage={url} backgroundColor="green" actionHandler={()=>setVisible(false)} actionText="Cancel"/>
             <View style={{flexDirection:'row',marginTop:40}}>
@@ -23,7 +25,12 @@ const [url,setUrl]=useState('');
             <AntDesign name="linkedin-square" size={30} color="green"  style={styles.icon}/>
             </Pressable>
             </View>
+          
+            <Form/>
+            
         </View>
+    
+      </>
     )
 }
 
