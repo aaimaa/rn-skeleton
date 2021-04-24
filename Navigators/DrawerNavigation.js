@@ -7,6 +7,7 @@ import HomeScreen from '../Screens/Home'
 import AboutUs from '../Screens/AboutUs'
 import ContactUs from '../Screens/ContactUs'
 import SignUp from '../Screens/SignUp'
+import CropInfo from '../Screens/CropInfo';
 
 const DrawerNavigation = () => {
     const Drawer = createDrawerNavigator();
@@ -17,7 +18,7 @@ const DrawerNavigation = () => {
                 <Drawer.Screen name="About Us" component={ AboutUs} />
                 <Drawer.Screen name="Contact Us" component={ ContactUs} />
                 <Drawer.Screen name="SignUp" component={ SignUp} />
-
+<Drawer.Screen name="Crops" component={CropInfo}/>
 
             </Drawer.Navigator>
         </NavigationContainer>
