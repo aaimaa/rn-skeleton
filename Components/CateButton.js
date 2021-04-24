@@ -1,16 +1,23 @@
+import { useNavigation } from '@react-navigation/core';
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
-import {Button} from 'native-base'
-import { NavigationHelpersContext } from '@react-navigation/core'
-const CateButton = (props,navigation) => {
-    const {crop,color}=props
+import { StyleSheet, Text, View ,TouchableOpacity} from 'react-native'
+
+const CateButton = (props) => {
+    const {color,crop}=props;
+    
+    const navigation=useNavigation();
+ const onBtnPress=()=>{
+      navigation.navigate('CropDetails')
+  }
     return (
     <View style={{flex:1,justifyContent:'center'}}>
-<Button onPress={()=>navigation.navigate('CropInfo') } style={{justifyContent:'center',alignItems:'center',width:200,backgroundColor:`${color}`}}>
+<TouchableOpacity  onPress={()=>onBtnPress()} style={{width:200,backgroundColor:`${color}`,justifyContent:'center',alignItems:'center',height:50}}>
     <Text>{crop}</Text>
-</Button>
+    </TouchableOpacity>
+
+
     </View>
-    
+
 
     )
 }
