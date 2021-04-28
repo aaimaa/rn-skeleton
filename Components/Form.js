@@ -2,9 +2,9 @@
 
 
 import React from 'react';
- import { Button, TextInput, View,StyleSheet } from 'react-native';
+ import { Button, TextInput, View,StyleSheet ,TouchableOpacity,Text} from 'react-native';
  import { Formik } from 'formik';
- 
+ import { AntDesign } from '@expo/vector-icons';
   const Form = props => (
    <Formik
      initialValues={{ email: '',query:'',name:'',contact:'' }}
@@ -19,13 +19,7 @@ import React from 'react';
            placeholder="email"
            style={styles.input}
          />
-         <TextInput
-           onChangeText={handleChange('query')}
-           onBlur={handleBlur('query')}
-           value={values.query}
-        placeholder="query"
-        style={styles.input}
-         />
+        
          <TextInput
            onChangeText={handleChange('name')}
            onBlur={handleBlur('name')}
@@ -41,12 +35,27 @@ import React from 'react';
            placeholder="contact no"
            style={styles.input}
          />
+         <View style={{flexDirection:'row',borderWidth:1,borderColor:'blue',width:200,borderRadius:12}}>
+         <AntDesign name="camerao" size={24} color="black" style={{padding:12}}/>
+        <TextInput
+        onChangeText={handleChange('contact')}
+        onBlur={handleBlur('contact')}
+        value={values.contact}
+        placeholder="Take Picture"
         
-         <Button onPress={handleSubmit} title="Submit" style={{padding:12}} />
+        />
+        </View>
+         
+
+
+         <TouchableOpacity style={{width:200,margin:12,borderWidth:1,borderColor:'blue',height:40,backgroundColor:'blue',borderRadius:12}}>
+           <Text style={{textAlign:'center',fontWeight:'bold'}}>Submit</Text>
+         </TouchableOpacity>
        </View>
      )}
    </Formik>
  );
+
 
  const styles = StyleSheet.create({
     container:{

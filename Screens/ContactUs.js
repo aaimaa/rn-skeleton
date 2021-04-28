@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import { Pressable, StyleSheet, Text, View } from 'react-native'
 import { AntDesign } from '@expo/vector-icons';
-
+import {RNCamera} from 'react-native-camera'
 import SnackBar from 'react-native-snackbar-component'
 import Form from '../Components/Form'
 
