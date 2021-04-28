@@ -10,7 +10,7 @@ const ContactUs = () => {
     const [hasPermission, setHasPermission] = useState(null);
     const [cameraRef, setCameraRef] = useState(null);
     const [type, setType] = useState(Camera.Constants.Type.back);
-  
+  const [image,setImage]=useState(null);
     const[visible,setVisible]=useState(false);
 const [url,setUrl]=useState('');
 
@@ -67,7 +67,7 @@ useEffect(() => {
           <TouchableOpacity onPress={async () => {
                 if (cameraRef) {
                   let photo = await cameraRef.takePictureAsync();
-                 
+                 setImage(photo.uri);
                 }
               }}>
               <Text>
